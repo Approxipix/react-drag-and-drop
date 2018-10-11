@@ -1,0 +1,124 @@
+{
+  "lanes": [
+    {
+      "id": "PROGRESS",
+      "title": "In progress",
+      "style": {"width": 280},
+      "cards": [
+        {
+          "id": "Detail2",
+          "title": "Renderable Detail View",
+          "description": "Lorem ipsum dolor sit amet."
+        },
+        {
+          "id": "Editable2",
+          "title": "EditableFieldView",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia saepe in temporibus repellendus, et iste placeat consectetur magnam odio."
+        },
+        {
+          "id": "Keyboard2",
+          "title": "Keyboard Shortcuts Disabled",
+          "description": "Sit amet, consectetur adipisicing elit. Mollitia saepe in temporibus repellendus."
+        }
+      ]
+    },
+    {
+      "id": "TESTING",
+      "title": "Testing",
+      "style": {"width": 280},
+      "cards": [
+        {
+          "id": "Attachment",
+          "title": "Attachment preview icon",
+          "description": "Mollitia saepe in temporibus repellendus, et iste placeat consectetur magnam odio! Repudiandae."
+        },
+        {
+          "id": "PopOver",
+          "title": "Clicking icon should open pop-over",
+          "description": "Repudiandae."},
+        {
+          "id": "Document",
+          "title": "Private Document To Team",
+          "description": "Consectetur adipisicing elit. Mollitia saepe in temporibus repellendus!"}
+      ]
+    },
+    {
+      "id": "TESTED",
+      "title": "Tested",
+      "style": {"width": 280},
+      "cards": [
+        {
+          "id": "Plugins",
+          "title": "Plugins",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia saepe in temporibus repellendus, et iste placeat consectetur magnam odio! Repudiandae."
+        },
+        {
+          "id": "CSS",
+          "title": "Update CSS",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        },
+        {
+          "id": "URLs",
+          "title": "Attach URLs from comment",
+          "description": "Mollitia saepe in temporibus repellendus, et iste placeat consectetur magnam odio! Repudiandae."
+        },
+        {
+          "id": "DefaultName",
+          "title": "Default name",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        }
+      ]
+    },
+    {
+      "id": "CODE",
+      "title": "Code Review",
+      "style": {"width": 280},
+      "cards": [
+        {
+          "id": "Diagnostics",
+          "title": "New Diagnostics",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia saepe in temporibus repellendus, et iste placeat consectetur magnam odio! Repudiandae."
+        },
+        {
+          "id": "Pre-load",
+          "title": "Pre-load attachments",
+          "description": "Repudiandae."
+        },
+        {
+          "id": "Post-message",
+          "title": "Add post-message",
+          "description": "Mollitia saepe in temporibus repellendus, et iste placeat consectetur magnam odio!"
+        },
+        {
+          "id": "Button",
+          "title": "Button enable/disable actions",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        }
+      ]
+    },
+    {
+      "id": "ARCHIVED1",
+      "title": "Archived1",
+      "style": {"width": 280},
+      "cards": [
+        {
+          "id": "Archived1",
+          "title": "Go Testing",
+          "description": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "ARCHIVED2",
+      "title": "Archived2",
+      "style": {"width": 280},
+      "cards": [
+        {
+          "id": "Archived2",
+          "title": "Go Programming",
+          "description": "Completed"
+        }
+      ]
+    }
+  ]
+}

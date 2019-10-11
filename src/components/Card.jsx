@@ -1,23 +1,22 @@
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
-import {CardHeader, CardTitle, Detail, MovableCardWrapper} from '../styles/Base.jsx'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { CardHeader, CardTitle, Detail, MovableCardWrapper } from '../styles/Base.jsx';
 
 class Card extends Component {
-
   renderBody = () => {
-      const {title, description} = this.props;
-      return (
-        <span>
-          <CardHeader>
-            <CardTitle>{title}</CardTitle>
-          </CardHeader>
-          <Detail>{description}</Detail>
-        </span>
-      )
+    const { title, description } = this.props;
+    return (
+      <div>
+        <CardHeader>
+          <CardTitle>{title}</CardTitle>
+        </CardHeader>
+        <Detail>{description}</Detail>
+      </div>
+    )
   };
 
   render() {
-    const {id, cardStyle, dragStyle, ...otherProps} = this.props;
+    const { id, cardStyle, dragStyle, ...otherProps } = this.props;
     return (
       <MovableCardWrapper
         key={id}

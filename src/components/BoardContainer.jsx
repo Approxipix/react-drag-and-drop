@@ -1,19 +1,19 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import pick from 'lodash/pick'
 import isEqual from 'lodash/isEqual'
-import {BoardDiv} from '../styles/Base.jsx'
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
+import { BoardDiv } from '../styles/Base.jsx'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import Lane from './Lane.jsx'
-import {Container, Draggable} from 'react-smooth-dnd'
+import { Container, Draggable } from 'react-smooth-dnd'
 
 import * as boardActions from '../actions/BoardActions'
 import * as laneActions from '../actions/LaneActions'
 
 class BoardContainer extends Component {
   wireEventBus = () => {
-    const {actions, eventBusHandle} = this.props;
+    const { actions, eventBusHandle } = this.props;
     let eventBus = {
       publish: event => {
         switch (event.type) {
@@ -35,7 +35,7 @@ class BoardContainer extends Component {
   };
 
   componentWillMount() {
-    const {actions, eventBusHandle} = this.props;
+    const { actions, eventBusHandle } = this.props;
     actions.loadBoard(this.props.data);
     if (eventBusHandle) {
       this.wireEventBus()
@@ -43,7 +43,7 @@ class BoardContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const {data, reducerData, onDataChange} = this.props;
+    const { data, reducerData, onDataChange } = this.props;
     if (nextProps.reducerData && !isEqual(reducerData, nextProps.reducerData)) {
       onDataChange(nextProps.reducerData)
     }
@@ -57,14 +57,14 @@ class BoardContainer extends Component {
     return this.props.reducerData.lanes.find(lane => lane.id === laneId).cards[cardIndex]
   };
 
-  onDragStart = ({payload}) => {
-    const {handleLaneDragStart} = this.props;
+  onDragStart = ({ payload }) => {
+    const { handleLaneDragStart } = this.props;
     handleLaneDragStart(payload.id)
   };
 
-  onLaneDrop = ({removedIndex, addedIndex, payload}) => {
-    const {actions, handleLaneDragEnd} = this.props;
-    actions.moveLane({oldIndex: removedIndex, newIndex: addedIndex});
+  onLaneDrop = ({ removedIndex, addedIndex, payload }) => {
+    const { actions, handleLaneDragEnd } = this.props;
+    actions.moveLane({ oldIndex: removedIndex, newIndex: addedIndex });
     handleLaneDragEnd(payload.id, addedIndex)
   };
 
@@ -73,7 +73,15 @@ class BoardContainer extends Component {
   };
 
   render() {
-    const {id, reducerData, draggable, laneDraggable, laneDragClass, style, ...otherProps} = this.props;
+    const {
+      id,
+      reducerData,
+      draggable,
+      laneDraggable,
+      laneDragClass,
+      style,
+      ...otherProps
+    } = this.props;
     const passthroughProps = pick(this.props, [
       'onLaneScroll',
       'onCardClick',
@@ -94,11 +102,11 @@ class BoardContainer extends Component {
           onDragStart={this.onDragStart}
           dragClass={laneDragClass}
           onDrop={this.onLaneDrop}
-					lockAxis={'x'}  //x or y
+          lockAxis={'x'}  //x or y
           getChildPayload={index => this.getLaneDetails(index)}
           groupName={`Board${id}`}>
           {reducerData.lanes.map((lane, index) => {
-            const {id, droppable, ...otherProps} = lane;
+            const { id, droppable, ...otherProps } = lane;
             const laneToRender = (
               <Lane
                 key={id}
@@ -142,7 +150,7 @@ BoardContainer.propTypes = {
   cardDraggable: PropTypes.bool,
   cardDragClass: PropTypes.string,
   laneDragClass: PropTypes.string
-}
+};
 
 BoardContainer.defaultProps = {
   onDataChange: () => {},
@@ -159,11 +167,11 @@ BoardContainer.defaultProps = {
 };
 
 const mapStateToProps = state => {
-  return state.lanes ? {reducerData: state} : {}
+  return state.lanes ? { reducerData: state } : {}
 };
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({...boardActions, ...laneActions}, dispatch)
+  actions: bindActionCreators({ ...boardActions, ...laneActions }, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BoardContainer)

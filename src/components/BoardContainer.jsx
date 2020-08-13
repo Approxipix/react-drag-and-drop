@@ -118,11 +118,9 @@ class BoardContainer extends Component {
                 {...passthroughProps}
               />
             );
-            return draggable && laneDraggable ? (
-              <Draggable key={lane.id}>{laneToRender}</Draggable>
-            ) : (
-              <span key={lane.id}>{laneToRender}</span>
-            )
+            return draggable && laneDraggable
+              ? <Draggable key={lane.id}>{laneToRender}</Draggable>
+              : <span key={lane.id}>{laneToRender}</span>
           })}
         </Container>
       </BoardDiv>
@@ -166,9 +164,7 @@ BoardContainer.defaultProps = {
   laneDragClass: 'react_dragLaneClass'
 };
 
-const mapStateToProps = state => {
-  return state.lanes ? { reducerData: state } : {}
-};
+const mapStateToProps = state => state.lanes ? { reducerData: state } : {};
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({ ...boardActions, ...laneActions }, dispatch)

@@ -21,11 +21,9 @@ class Card extends Component {
       <MovableCardWrapper
         key={id}
         data-id={id}
-        style={{
-          ...cardStyle,
-          ...dragStyle
-        }}
-        {...otherProps}>
+        style={{ ...cardStyle, ...dragStyle }}
+        {...otherProps}
+      >
         {this.renderBody()}
       </MovableCardWrapper>
     )

@@ -21,7 +21,6 @@ class Lane extends Component {
     };
   }
 
-
   handleScroll = evt => {
     const node = evt.target;
     const { id, onLaneScroll } = this.props;
@@ -120,11 +119,9 @@ class Lane extends Component {
           {...card}
         />
       );
-      return draggable && cardDraggable ? (
-        <Draggable key={card.id}>{cardToRender}</Draggable>
-      ) : (
-        <span key={card.id}>{cardToRender}</span>
-      )
+      return draggable && cardDraggable
+        ? <Draggable key={card.id}>{cardToRender}</Draggable>
+        : <span key={card.id}>{cardToRender}</span>
     });
 
     return (

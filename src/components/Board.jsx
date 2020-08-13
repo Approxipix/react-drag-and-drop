@@ -15,9 +15,7 @@ class Board extends Component {
     this.id = uuidv1()
   }
 
-  getStore = () => {
-    return createStore(boardReducer, applyMiddleware(...middlewares))
-  };
+  getStore = () => createStore(boardReducer, applyMiddleware(...middlewares));
 
   render() {
     return (

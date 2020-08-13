@@ -1,7 +1,7 @@
 {
-  "name": "draganddrop",
+  "name": "react-drag-and-drop",
   "version": "1.0.0",
-  "description": "React Drag&Drop",
+  "description": "React Drag And Drop Todo List",
   "main": "webpack.common.js",
   "scripts": {
     "start": "webpack --mode development --config webpack.dev.js"
@@ -11,7 +11,7 @@
     "drag&drop"
   ],
   "author": "Yaroslav Afanasiev <yaroslav.afanassiev@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "immutability-helper": "^2.7.1",
     "lodash": "^4.17.19",
